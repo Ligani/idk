@@ -12,8 +12,7 @@ namespace DataAcces.Contexts
     public class UserStroreDbContext : DbContext
     {
         public UserStroreDbContext(DbContextOptions<UserStroreDbContext> options) : base(options)
-        {
-        }
+        {}
 
         public DbSet<UserEntity> Users { get; set; }
     }

@@ -14,13 +14,22 @@ namespace DataAcces.Configurations
     {
         public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
-            builder.HasKey(u => u.Id);
+            builder
+                .HasKey(u => u.Id);
 
-            builder.Property(u => u.Name).IsRequired().HasMaxLength(User_.MAX_NAME_LENGTH);
+            builder
+                .Property(u => u.Name)
+                .IsRequired()
+                .HasMaxLength(User_.MAX_NAME_LENGTH);
 
-            builder.Property(u => u.RoleOfuser).IsRequired();
+            builder
+                .Property(u => u.RoleOfuser)
+                .IsRequired();
 
-            builder.Property(u => u.HashPassword).IsRequired();
+            builder
+                .Property(u => u.HashPassword)
+                .IsRequired()
+                .HasMaxLength(User_.MAX_PASSWORD_LENGTH);
         }
     }
 }
